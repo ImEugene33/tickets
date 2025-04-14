@@ -1,9 +1,9 @@
 
 const MOVIES = [
-  { title: "Kill Bill", poster: "/images/kbposter7.jpg" },
-  { title: "Pulp Fiction", poster: "/images/Pfposter3.jpg" },
-  { title: "Once Upon a Time in Hollywood", poster: "/images/Newpostit.jpg" },
-  { title: "The Hateful Eight", poster: "/images/Hatefuleightposter2.jpg" },
+  { title: "Kill Bill", poster: "images/kbposter7.jpg" },
+  { title: "Pulp Fiction", poster: "/images/pfposter3.jpg" },
+  { title: "Once Upon a Time in Hollywood", poster: "/images/newpostit.jpg" },
+  { title: "The Hateful Eight", poster: "/images/hatefuleightposter2.jpg" },
 ];
 
 const SEATS_PER_ROW = 5;
