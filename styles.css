@@ -1,0 +1,300 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.page-width {
+  max-width: 1440px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #121212;
+  color: #fff;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+
+  .movies {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.movie {
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: border-color 0.3s ease;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  padding-bottom: 150%;
+  overflow: hidden;
+}
+
+.movie.selected {
+  border-color: yellow;
+}
+
+.movie img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.movie-title {
+  padding: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.movie-title:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: blur(5px);
+  z-index: -1;
+  background: black;
+}
+
+.dates, .times {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.date, .time {
+  padding: 10px 15px;
+  background: #333;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.date.selected, .time.selected {
+  background: yellow;
+  color: #000;
+}
+
+.screen {
+  width: 30%;
+  margin: 30px auto 10px;
+  height: 30px;
+  border-radius: 50%/100px 100px 0 0;
+  background: #ccc;
+  color: #000;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+  display: none;
+}
+
+.seating-area {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  max-width: fit-content;
+  margin: 0 auto;
+}
+
+.seats {
+  display: grid;
+  grid-template-columns: repeat(5, 40px);
+  gap: 10px;
+  display: none;
+}
+
+.seat {
+  width: 40px;
+  height: 40px;
+  background: #555;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.seat:hover::after {
+  content: attr(data-price) '₴';
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #222;
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.seat.booked {
+  background: red;
+  cursor: not-allowed;
+}
+
+.seat.selected {
+  background: limegreen;
+}
+
+.rows-label {
+  position: absolute;
+  left: -25px;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  display: none;
+}
+
+.rows-label span {
+  height: 40px;
+  line-height: 40px;
+  font-weight: bold;
+}
+
+.ticket-info {
+  margin: 20px auto;
+  padding: 15px;
+  background: #333;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  display: none;
+}
+
+.ticket-info.show {
+  display: block;
+}
+
+.ticket-info p {
+  margin: 5px 0;
+}
+
+.booked-tickets {
+  margin: 20px auto;
+  padding: 15px;
+  background: #333;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  display: none;
+}
+
+.booked-tickets.show {
+  display: block;
+}
+
+.booked-tickets h2 {
+  margin-bottom: 10px;
+}
+
+.booked-tickets .booking-entry {
+  margin: 5px 0;
+  background: #444;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.booked-tickets .booking-entry p {
+  margin-bottom: 8px;
+}
+
+.booked-tickets .email-input {
+  margin: 5px 0;
+  padding: 8px;
+  width: 80%;
+  border: none;
+  border-radius: 5px;
+  background: #555;
+  color: #fff;
+}
+
+.booked-tickets .email-input::placeholder {
+  color: #bbb;
+}
+
+.booked-tickets .send-email-button {
+  background: yellow;
+  margin: 5px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.booked-tickets .send-email-button:hover {
+  background: #e6e600;
+}
+
+.controls {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  background: yellow;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 10px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #e6e600;
+}
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #222;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: #fff;
+  display: none;
+}

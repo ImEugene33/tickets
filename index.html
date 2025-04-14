@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Booking App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-width">
+    <h1>🎬 Cinema Booking</h1>
+    <div class="movies" id="movieList"></div>
+    <div class="dates" id="dates"></div>
+    <div class="times" id="times"></div>
+    <div class="ticket-info" id="ticketInfo">
+      <h2>Selected Tickets</h2>
+      <p id="ticketMovie"></p>
+      <p id="ticketDate"></p>
+      <p id="ticketTime"></p>
+      <p id="ticketSeats"></p>
+      <p id="ticketTotal"></p>
+    </div>
+    <div class="booked-tickets" id="bookedTickets">
+      <h2>Booked Tickets</h2>
+      <div id="bookedList"></div>
+    </div>
+    <div class="screen" id="screen">SCREEN</div>
+    <div class="seating-area">
+      <div class="rows-label" id="rowLabels"></div>
+      <div class="seats" id="seatsContainer"></div>
+    </div>
+    <div class="controls">
+      <button id="bookButton">📌 Book</button>
+      <button id="resetButton">❌ Cancel All</button>
+    </div>
+    <div class="toast" id="toast"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    emailjs.init('M6bKUNox19LicoUij')
+  </script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
