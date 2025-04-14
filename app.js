@@ -1,6 +1,6 @@
 
 const MOVIES = [
-  { title: "Kill Bill", poster: "/images/Kbposter7.jpg" },
+  { title: "Kill Bill", poster: "/images/kbposter7.jpg" },
   { title: "Pulp Fiction", poster: "/images/Pfposter3.jpg" },
   { title: "Once Upon a Time in Hollywood", poster: "/images/Newpostit.jpg" },
   { title: "The Hateful Eight", poster: "/images/Hatefuleightposter2.jpg" },
